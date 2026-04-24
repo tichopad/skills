@@ -25,7 +25,7 @@ Get branch:
 git rev-parse --abbrev-ref HEAD
 ```
 
-Match `^[A-Z]+-\d+` at start of branch name (e.g. `HCP-16187-fix-renovate` → `HCP-16187`).
+Match `^[A-Z]+-\d+` at start of branch name (e.g. `XYZ-16177-fix-renovate` → `XYZ-16177`).
 
 No match → ask user for ticket. Wait for answer. Do not proceed without ticket.
 
@@ -61,8 +61,8 @@ Format: `<JIRA> <type>: <subject>`
 - Full title ≤ 70 chars.
 
 Examples:
-- `HCP-16187 fix: handle Auth0 getSession failures in auth middleware`
-- `HCP-12345 feat: add zod validation to telemetry endpoints`
+- `XYZ-16177 fix: handle Auth0 getSession failures in auth middleware`
+- `XYZ-12345 feat: add zod validation to telemetry endpoints`
 
 ### 5. Draft body
 
@@ -108,10 +108,10 @@ Return PR URL.
 
 ## Example
 
-Branch: `HCP-16187-auth-hardening`
+Branch: `XYZ-16177-auth-hardening`
 Base: `main` (default)
 
-Title: `HCP-16187 fix: harden auth middleware and validate request bodies`
+Title: `XYZ-16177 fix: harden auth middleware and validate request bodies`
 
 Body:
 
@@ -119,13 +119,13 @@ Body:
 ## Summary
 
 - Catch Auth0 `getSession` failures in auth middleware and respond with 503 instead of a 500 crash
-- Validate request bodies in `ifs.post` and `telemetry/data.post` with zod via `readValidatedBody`
+- Validate request bodies in `post` and `/data.post` with zod via `readValidatedBody`
 
 ## Details
 
-Linked to HCP-16187
+Linked to XYZ-16177
 
-The IFS endpoint is a generic GraphQL proxy, so the zod schema intentionally stays loose - it only checks structural shape (`query` is a non-empty string, optional `variables` object, optional `operationName`) rather than enumerating allowed operations. Goal is to reject obviously malformed payloads before they hit the upstream.
+The endpoint is a generic GraphQL proxy, so the zod schema intentionally stays loose - it only checks structural shape (`query` is a non-empty string, optional `variables` object, optional `operationName`) rather than enumerating allowed operations. Goal is to reject obviously malformed payloads before they hit the upstream.
 ```
 
 ## Guardrails
