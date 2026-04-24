@@ -1,7 +1,7 @@
 ---
 name: implement-phase
 description: Implement a phase of technical plan with verification
-disable-model-invocation: true
+agent: build
 ---
 
 # Implement Phase

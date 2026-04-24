@@ -1,7 +1,7 @@
 ---
 name: pr-create
 description: Creates a DRAFT GitHub PR.
-disable-model-invocation: true
+agent: build
 ---
 
 # pr-create
@@ -18,7 +18,7 @@ Optional base branch override, e.g. `/pr-create develop`. Default base: `main`.
 
 ## Steps
 
-### 1. Extract JIRA ticket
+### 1. Extract JIRA ticket if available
 
 Get branch:
 
