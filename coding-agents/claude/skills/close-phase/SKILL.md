@@ -37,5 +37,5 @@ If the argument is missing, ask for it before proceeding.
 ## 5. Commit
 
 - Stage **all** changed and renamed files related to this close (plan file, archived test plan, any other files modified during the phase).
-- Create a commit following repository commit conventions. The short (title) line **must** include the phase number (e.g., `feat: complete phase 1 — CTA block config`).
+- Create a commit following repository commit conventions (see past commits). The short (title) line **must** include the phase number (e.g., `feat: complete phase 1 — CTA block config`).
 - Do **not** push unless the user explicitly asks.
